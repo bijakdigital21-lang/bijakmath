@@ -3,161 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bijak Math - Portal Pembelajaran Matematik</title>
+    <title>Bijak Math - Kuasai Matematik dengan Mudah</title>
     <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #FF9F43;
+            --dark-color: #2C3E50;
+            --light-color: #F8F9FA;
+        }
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif, system-ui;
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            color: #333;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
         }
 
-        .container {
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 40px 30px;
-            width: 100%;
-            max-width: 600px;
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+            color: white;
             text-align: center;
+            padding: 4rem 1rem;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        .logo-area {
+        .logo {
             font-size: 3rem;
-            margin-bottom: 10px;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        h1 {
-            color: #2c3e50;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            font-weight: 700;
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        p.subtitle {
-            color: #7f8c8d;
+        /* Main Content */
+        main {
+            max-width: 1000px;
+            margin: -2rem auto 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 3rem;
             font-size: 1.1rem;
-            margin-bottom: 30px;
+            color: #555;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .button-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        /* Grid Button */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .app-btn {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            color: white;
+            justify-content: center;
+            background: white;
+            color: var(--dark-color);
             text-decoration: none;
-            padding: 18px 25px;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 600;
+            padding: 2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            border: 2px solid transparent;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
+        /* Warna & Gaya Mengikut Tahap */
+        .btn-tahap-1 { border-left: 8px solid #FF6B6B; }
+        .btn-tahap-2 { border-left: 8px solid #FF9F43; }
+        .btn-tahap-3 { border-left: 1px solid #FFD200; border-left: 8px solid #FFD200; }
+        .btn-tahap-4 { border-left: 8px solid #10AC84; }
+        .btn-tahap-5 { border-left: 8px solid #2E86DE; }
+        .btn-tahap-6 { border-left: 8px solid #7451EB; }
+
+        .app-btn span {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #777;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Hover Effect */
         .app-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
-            background: linear-gradient(135deg, #2980b9 0%, #2573a7 100%);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+            background-color: #fff;
+            border-color: rgba(0,0,0,0.05);
         }
 
         .app-btn:active {
             transform: translateY(-1px);
         }
 
-        .btn-icon {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-size: 1rem;
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
+            background-color: #fff;
+            margin-top: auto;
         }
 
-        /* Variasi warna lembut untuk setiap tahun supaya menarik */
-        .btn-t1 { background: linear-gradient(135deg, #FF6B6B 0%, #EE5253 100%); box-shadow: 0 4px 15px rgba(238, 82, 83, 0.3); }
-        .btn-t1:hover { background: linear-gradient(135deg, #EE5253 0%, #D63031 100%); }
-
-        .btn-t2 { background: linear-gradient(135deg, #FF9F43 0%, #F39C12 100%); box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); }
-        .btn-t2:hover { background: linear-gradient(135deg, #F39C12 0%, #E67E22 100%); }
-
-        .btn-t3 { background: linear-gradient(135deg, #10AC84 0%, #1DD1A1 100%); box-shadow: 0 4px 15px rgba(29, 209, 161, 0.3); }
-        .btn-t3:hover { background: linear-gradient(135deg, #1DD1A1 0%, #10AC84 100%); }
-
-        .btn-t4 { background: linear-gradient(135deg, #2E86DE 0%, #54A0FF 100%); box-shadow: 0 4px 15px rgba(84, 160, 255, 0.3); }
-        .btn-t4:hover { background: linear-gradient(135deg, #54A0FF 0%, #2E86DE 100%); }
-
-        .btn-t5 { background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%); box-shadow: 0 4px 15px rgba(142, 68, 173, 0.3); }
-        .btn-t5:hover { background: linear-gradient(135deg, #8E44AD 0%, #7D3C98 100%); }
-
-        .btn-t6 { background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%); box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3); }
-        .btn-t6:hover { background: linear-gradient(135deg, #2C3E50 0%, #1A252F 100%); }
-
-        footer {
-            margin-top: 30px;
-            font-size: 0.9rem;
-            color: #7f8c8d;
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .logo { font-size: 2.2rem; }
+            .tagline { font-size: 1rem; }
+            main { margin-top: -1.5rem; }
+            .app-btn { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="logo-area">🧮✨</div>
-        <h1>Bijak Math</h1>
-        <p class="subtitle">Pilih tahun untuk memulakan pembelajaran interaktif anda</p>
+    <header>
+        <div class="logo">BIJAK MATH</div>
+        <div class="tagline">Portal Pembelajaran Matematik Interaktif Anda</div>
+    </header>
 
-        <div class="button-grid">
-            <a href="https://bijakdigital21-lang.github.io/tahun1/" class="app-btn btn-t1" target="_blank">
-                <span>BIJAK MATH TAHUN 1</span>
-                <span class="btn-icon">MULA</span>
-            </a>
-            
-            <a href="https://bijakdigital21-lang.github.io/tahun2/" class="app-btn btn-t2" target="_blank">
-                <span>BIJAK MATH TAHUN 2</span>
-                <span class="btn-icon">MULA</span>
-            </a>
-            
-            <a href="https://bijakdigital21-lang.github.io/tahun3/" class="app-btn btn-t3" target="_blank">
-                <span>BIJAK MATH TAHUN 3</span>
-                <span class="btn-icon">MULA</span>
-            </a>
-            
-            <a href="https://bijakdigital21-lang.github.io/tahun4/" class="app-btn btn-t4" target="_blank">
-                <span>BIJAK MATH TAHUN 4</span>
-                <span class="btn-icon">MULA</span>
-            </a>
-            
-            <a href="https://bijakdigital21-lang.github.io/tahun5/" class="app-btn btn-t5" target="_blank">
-                <span>BIJAK MATH TAHUN 5</span>
-                <span class="btn-icon">MULA</span>
-            </a>
-            
-            <a href="https://bijakdigital21-lang.github.io/tahun6/" class="app-btn btn-t6" target="_blank">
-                <span>BIJAK MATH TAHUN 6</span>
-                <span class="btn-icon">MULA</span>
-            </a>
+    <main>
+        <div class="intro-text">
+            Sila pilih tahun di bawah untuk mula belajar dan menjawab kuiz matematik yang menyeronokkan!
         </div>
 
-        <footer>
-            &copy; 2026 Bijak Math. Hak Cipta Terpelihara.
-        </footer>
-    </div>
+        <div class="grid-container">
+            <a href="https://bijakdigital21-lang.github.io/tahun1/" class="app-btn btn-tahap-1" target="_blank">
+                BIJAK MATH TAHUN 1
+                <span>Mula Belajar ➔</span>
+            </a>
+
+            <a href="https://bijakdigital21-lang.github.io/tahun2/" class="app-btn btn-tahap-2" target="_blank">
+                BIJAK MATH TAHUN 2
+                <span>Mula Belajar ➔</span>
+            </a>
+
+            <a href="https://bijakdigital21-lang.github.io/tahun3/" class="app-btn btn-tahap-3" target="_blank">
+                BIJAK MATH TAHUN 3
+                <span>Mula Belajar ➔</span>
+            </a>
+
+            <a href="https://bijakdigital21-lang.github.io/tahun-4/" class="app-btn btn-tahap-4" target="_blank">
+                BIJAK MATH TAHUN 4
+                <span>Mula Belajar ➔</span>
+            </a>
+
+            <a href="https://bijakdigital21-lang.github.io/tahun-5/" class="app-btn btn-tahap-5" target="_blank">
+                BIJAK MATH TAHUN 5
+                <span>Mula Belajar ➔</span>
+            </a>
+
+            <a href="https://bijakdigital21-lang.github.io/tahun-6/" class="app-btn btn-tahap-6" target="_blank">
+                BIJAK MATH TAHUN 6
+                <span>Mula Belajar ➔</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Bijak Math. Hak Cipta Terpelihara.</p>
+    </footer>
 
 </body>
 </html>
